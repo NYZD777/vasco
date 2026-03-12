@@ -14,14 +14,6 @@
 
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <a href="#home" class="logo">DESPO<span>PED</span></a>
-        <button class="menu-toggle" onclick="openMobileMenu()" aria-label="Abrir menu">
-            <i data-lucide="menu" width="24" height="24"></i>
-        </button>
-    </header>
-
     <!-- CATEGORY BAR -->
     <nav class="cat-bar" id="catBar">
         <ul class="cat-list">
@@ -71,11 +63,29 @@
                 <a href="#nacional" class="btn-primary">Ver Coleção</a>
                 <a href="#contato" class="btn-ghost">Fale Conosco</a>
             </div>
+            <div class="hero-header">
+                <a href="#home" class="logo">DESPO<span>PED</span></a>
+                <button class="menu-toggle" onclick="openMobileMenu()" aria-label="Abrir menu">
+                    <i data-lucide="menu" width="24" height="24"></i>
+                </button>
+            </div>
         </div>
     </section>
 
     <!-- BANNER ROTATIVO -->
-    <div id="bannerContainer"></div>
+<div id="bannerContainer"></div>
+
+    <!-- GLOBAL SEARCH BAR -->
+    <div class="search-container" id="searchContainer">
+        <div class="search-box">
+            <i data-lucide="search" width="20" height="20"></i>
+            <input type="text" id="searchInput" placeholder="Buscar camisas (ex: Palmeiras, Brasil, Jogador)...">
+            <button id="clearSearch" class="clear-btn" style="display: none;">
+                <i data-lucide="x" width="16" height="16"></i>
+            </button>
+        </div>
+        <div id="searchInfo" class="search-info" style="display: none;"></div>
+    </div>
 
     <!-- PRODUTOS (gerado dinamicamente) -->
     <div id="productsContainer"></div>

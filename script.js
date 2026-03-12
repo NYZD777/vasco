@@ -1,6 +1,10 @@
 // Configurações
 const WA_NUMBER = "5519982438102";
 
+// Search state
+let searchTimeout = null;
+let currentSearchQuery = '';
+
 // Função para gerar HTML do card
 function createCard(product, category) {
     return `
@@ -104,28 +108,56 @@ function goToBanner(index) {
     dots[currentBanner].classList.add('active');
 }
 
-// Renderiza todos os produtos
-function renderProducts() {
+// Filter products by query
+function filterProducts(query) {
+    if (!query.trim()) return products;
+    
+    const q = query.toLowerCase().trim();
+    const filtered = {};
+    
+    for (const [category, items] of Object.entries(products)) {
+        const matches = items.filter(product => 
+            product.name.toLowerCase().includes(q)
+        );
+        if (matches.length > 0) {
+            filtered[category] = matches;
+        }
+    }
+    
+    return filtered;
+}
+
+// Render products from data object (products or filtered)
+function renderProductsData(data) {
     const container = document.getElementById('productsContainer');
     if (!container) return;
 
     let html = '';
-    for (const [category, data] of Object.entries(products)) {
-        html += createSection(category, data);
+    for (const [category, items] of Object.entries(data)) {
+        html += createSection(category, items);
     }
     container.innerHTML = html;
     
-    // Inicializa os ícones Lucide
     lucide.createIcons();
-    
-    // Inicializa WhatsApp
     initWhatsApp();
-    
-    // Inicializa Lightbox
     initLightbox();
-    
-    // Inicializa IntersectionObserver
     initFadeIn();
+}
+
+// Update search info display
+function showSearchInfo(msg, visible = true) {
+    const info = document.getElementById('searchInfo');
+    if (info) {
+        info.textContent = msg;
+        info.style.display = visible ? 'block' : 'none';
+    }
+}
+
+// Renderiza todos os produtos
+function renderProducts() {
+    renderProductsData(products);
+    showSearchInfo('', false);
+    currentSearchQuery = '';
 }
 
 // Inicializa links do WhatsApp
@@ -184,7 +216,7 @@ function initScrollSpy() {
     window.addEventListener('scroll', () => {
         let cur = '';
         sections.forEach(s => {
-            if (window.scrollY + 120 >= s.offsetTop) cur = s.id;
+            if (window.scrollY + 100 >= s.offsetTop) cur = s.id;
         });
         catLinks.forEach(l => {
             const isActive = l.getAttribute('href') === `#${cur}`;
@@ -218,10 +250,56 @@ document.addEventListener('keydown', e => {
     }
 });
 
+// Init search functionality
+function initSearch() {
+    const input = document.getElementById('searchInput');
+    const clearBtn = document.getElementById('clearSearch');
+    const container = document.getElementById('searchContainer');
+
+    if (!input || !clearBtn) return;
+
+    // Debounced search
+    function performSearch() {
+        const query = input.value.trim();
+        currentSearchQuery = query;
+
+        if (query) {
+            const filtered = filterProducts(query);
+            const total = Object.values(filtered).reduce((sum, items) => sum + items.length, 0);
+            
+            renderProductsData(filtered);
+            showSearchInfo(`Encontrados ${total} resultado(s): "${query}"`, true);
+            clearBtn.style.display = 'flex';
+        } else {
+            renderProducts();
+        }
+    }
+
+    input.addEventListener('input', () => {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(performSearch, 300);
+    });
+
+    clearBtn.addEventListener('click', () => {
+        input.value = '';
+        currentSearchQuery = '';
+        renderProducts();
+        clearBtn.style.display = 'none';
+        showSearchInfo('', false);
+        input.focus();
+    });
+
+    // Show/hide clear on focus
+    input.addEventListener('focus', () => {
+        if (input.value.trim()) clearBtn.style.display = 'flex';
+    });
+}
+
 // Inicialização
 document.addEventListener('DOMContentLoaded', () => {
     renderBanner();
     renderProducts();
     initScrollSpy();
+    initSearch();
 });
 

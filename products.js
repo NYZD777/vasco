@@ -20,7 +20,7 @@ const products = {
         { name: "SANTOS 25/26 UMBRO", price: "R$ 169,90", img: "fotos/SANTOS 2526 UMBRO.jpg" },
         { name: "SANTOS 25/26 UMBRO - BRANCA", price: "R$ 169,90", img: "fotos/SANTOS 2526 UMBRO - - NOVA.jpg" },
         { name: "SANTOS 25/26 UMBRO - AZUL", price: "R$ 169,90", img: "fotos/SANTOS 2526 UMBRO - AZUL.jpg" },
-        { name: "CRUZEIRO 25/26 ADIDAS", price: "R$ 169,90", img: "fotos/CRUZEIRO 2526 ADIDAS.jpg" },        
+        { name: "CRUZEIRO 25/26 ADIDAS", price: "R$ 169,90", img: "fotos/CRUZEIRO 2526 ADIDAS.jpg" },
     ],
     internacional: [
         { name: "Bohemian Football Club preta", price: "R$ 169,90", img: "fotos/Bohemian Football Club preta.png" },
@@ -73,6 +73,8 @@ const products = {
     ],
     jogador: [
         { name: "Camiseta Brasil Amarela – Jogador", price: "R$ 219,90", img: "fotos/PLAYER BRASIL 2526 NIKE.jpg" },
+        { name: "CAMISA JOGADOR BRASIL JORDAN 26/27", price: "R$ 219,90", img: "fotos/camisabrasiljogadorazul.jpg" },
+        { name: "CAMISA JOGADOR BRASIL 26/27", price: "R$ 219,90", img: "fotos/camisajogadorbrasil26.jpg" },
         { name: "PLAYER BRASIL 25/26 NIKE", price: "R$ 219,90", img: "fotos/CAMISA I PLAYER BRASIL 26-27 NIKE.jpg" },
         { name: "PALMEIRAS 24/25 PUMA - Jogador", price: "R$ 219,90", img: "fotos/PALMEIRAS 2425 PUMA - JOGADOR.jpg" },
         { name: "PALMEIRAS 25/26 PUMA - Jogador", price: "R$ 219,90", img: "fotos/PALMEIRAS 2526 PUMA - JOGADOR.jpg" },
@@ -116,7 +118,9 @@ const products = {
         { name: "MÉXICO 26/27 ADIDAS", price: "R$ 169,90", img: "fotos/MÉXICO 2627 ADIDAS.jpg" },
         { name: "CROÁCIA 24/25 NIKE", price: "R$ 169,90", img: "fotos/CROÁCIA 2425 NIKE.jpg" },
         { name: "INGLATERRA 24/25 NIKE", price: "R$ 169,90", img: "fotos/INGLATERRA 2425 NIKE.png" },
-        { name: "PORTUGAL 26/27 PUMA", price: "R$ 169,90", img: "fotos/PORTUGAL 2627 PUMA--.jpg" }
+        { name: "PORTUGAL 26/27 PUMA", price: "R$ 169,90", img: "fotos/PORTUGAL 2627 PUMA--.jpg" },
+        { name: "JAPÃO 26/27 ADIDAS", price: "R$ 169,90", img: "fotos/camisa japao.jpeg" },
+        { name: "MÉXICO 26/27 ADIDAS", price: "R$ 169,90", img: "fotos/camisamexico26.jpeg" },
     ]
 };
 
