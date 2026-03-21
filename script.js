@@ -11,7 +11,7 @@ function createCard(product, category) {
         <div class="card">
             <div class="img-box">
                 <span class="card-tag">${categoryLabels[category]?.title || category}</span>
-                <img src="${product.img}" class="zoom-img" alt="${product.name}">
+                <img src="${product.img}" class="zoom-img" loading="lazy" alt="${product.name}">
             </div>
             <div class="card-body">
                 <h3 class="p-name">${product.name}</h3>

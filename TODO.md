@@ -1,13 +1,18 @@
-# TODO: Implement Global Search Bar for Vasco Jersey Shop
+# Plano de Correções - Performance e Layout
 
-## Status: In Progress
+## ✅ Planejamento
+- [x] Analisar arquivos e criar plano
+- [x] Obter aprovação do usuário
 
-### Steps:
-- [✅] 1. Create TODO.md 
-- [✅] 2. Add search bar HTML to index.html (after bannerContainer)
-- [✅] 3. Add search styles to style.css
-- [✅] 4. Implement filter logic in script.js (filterProducts, renderFiltered, event listeners)
-- [ ] 5. Test filtering, clear, responsiveness
-- [ ] 6. Update TODO and complete
+## ✅ Correções Principais
+- [x] Editar style.css (corrigir sobreposição "despoped")
+- [x] Editar script.js (adicionar lazy loading nas imagens)
 
-**Notes:** Client-side search by product name across categories. Real-time, debounced. Matches site design (dark/green theme).
+## 🧪 Testes
+- [ ] Testar carregamento das imagens (lazy loading)
+- [ ] Verificar layout hero no desktop/mobile
+- [ ] Medir performance (DevTools Lighthouse)
+
+## ✅ Conclusão
+- [ ] Marcar tarefa como concluída
+
