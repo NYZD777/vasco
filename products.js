@@ -2,7 +2,7 @@
 const products = {
     nacional: [
         { name: "Palmeiras 25/26", price: "R$ 169,90", img: "fotos/palmeirasverdenova.png" },
-        { name: "Palmeiras Branca 25/26", price: "R$ 169,90", img: "fotos/palmeirasbrancanova.png" },
+        { name: "Palmeiras Branca 25/26", price: "R$ 209,90", img: "fotos/palmeirasbrancanova.png" },
         { name: "Palmeiras Mundial 25", price: "R$ 169,90", img: "fotos/palmeirasmundiaal.png" },
         { name: "Palmeiras away 25", price: "R$ 169,90", img: "fotos/palmeirasaway2025.png" },
         { name: "Palmeiras 24/25", price: "R$ 169,00", img: "fotos/palemirasverde24-25.png" },
@@ -74,8 +74,8 @@ const products = {
     jogador: [
         { name: "Camiseta Brasil Amarela – Jogador", price: "R$ 219,90", img: "fotos/PLAYER BRASIL 2526 NIKE.jpg" },
         { name: "CAMISA JOGADOR BRASIL JORDAN 26/27", price: "R$ 219,90", img: "fotos/camisabrasiljogadorazul.jpg" },
-        { name: "CAMISA JOGADOR BRASIL 26/27", price: "R$ 219,90", img: "fotos/camisajogadorbrasil26.jpg" },
-        { name: "PLAYER BRASIL 25/26 NIKE", price: "R$ 219,90", img: "fotos/CAMISA I PLAYER BRASIL 26-27 NIKE.jpg" },
+        { name: "CAMISA JOGADOR BRASIL 26/27", price: "R$ 229,90", img: "fotos/camisajogadorbrasil26.jpg" },
+        { name: "PLAYER BRASIL 25/26 NIKE", price: "R$ 229,90", img: "fotos/CAMISA I PLAYER BRASIL 26-27 NIKE.jpg" },
         { name: "PALMEIRAS 24/25 PUMA - Jogador", price: "R$ 219,90", img: "fotos/PALMEIRAS 2425 PUMA - JOGADOR.jpg" },
         { name: "PALMEIRAS 25/26 PUMA - Jogador", price: "R$ 219,90", img: "fotos/PALMEIRAS 2526 PUMA - JOGADOR.jpg" },
         { name: "PALMEIRAS 25/26 PUMA VERDE - Jogador", price: "R$ 219,90", img: "fotos/PALMEIRAS 2526 PUMA - JOGADOR - V.jpg" },
