@@ -2,7 +2,7 @@
 const products = {
     nacional: [
         { name: "Palmeiras 25/26", price: "R$ 169,90", img: "fotos/palmeirasverdenova.png" },
-        { name: "Palmeiras Branca 25/26", price: "R$ 209,90", img: "fotos/palmeirasbrancanova.png" },
+        { name: "Palmeiras Branca 25/26", price: "R$ 189,90", img: "fotos/palmeirasbrancanova.png" },
         { name: "Palmeiras Mundial 25", price: "R$ 169,90", img: "fotos/palmeirasmundiaal.png" },
         { name: "Palmeiras away 25", price: "R$ 169,90", img: "fotos/palmeirasaway2025.png" },
         { name: "Palmeiras 24/25", price: "R$ 169,00", img: "fotos/palemirasverde24-25.png" },
