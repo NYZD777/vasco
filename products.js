@@ -21,6 +21,7 @@ const products = {
         { name: "SANTOS 25/26 UMBRO - BRANCA", price: "R$ 169,90", img: "fotos/SANTOS 2526 UMBRO - - NOVA.jpg" },
         { name: "SANTOS 25/26 UMBRO - AZUL", price: "R$ 169,90", img: "fotos/SANTOS 2526 UMBRO - AZUL.jpg" },
         { name: "CRUZEIRO 25/26 ADIDAS", price: "R$ 169,90", img: "fotos/CRUZEIRO 2526 ADIDAS.jpg" },
+        
     ],
     internacional: [
         { name: "Bohemian Football Club preta", price: "R$ 169,90", img: "fotos/Bohemian Football Club preta.png" },
@@ -92,8 +93,12 @@ const products = {
         { name: "SÃO PAULO 25/26 NEW BALANCE - Vermelha - Jogador", price: "R$ 219,90", img: "fotos/SÃO PAULO 2526 NEW BALANCE - Vermelha- Jogador.jpg" },
         { name: "SÃO PAULO 25/26 NEW BALANCE - Branca - Jogador", price: "R$ 219,90", img: "fotos/SÃO PAULO 2526 NEW BALANCE - Branca -  Jogador.jpg" },
         { name: "BARCELONA 25/26 KOBE BRYANT - Jogador", price: "R$ 219,90", img: "fotos/BARCELONA 2526 KOBE BRYANT - Jogador.jpg" },
-        { name: "Camisa Barcelona x Cactus Jack - Jogador", price: "R$ 219,90", img: "fotos/Camisa Barcelona x Cactus Jack - jogador -.jpg" }
+        { name: "Camisa Barcelona x Cactus Jack - Jogador", price: "R$ 219,90", img: "fotos/Camisa Barcelona x Cactus Jack - jogador -.jpg" },
+        { name: "Camisa Ingalterra 26/27- Jogador", price: "R$ 229,90", img: "fotos/INGLATERRA JOGADOR NOVA.jpeg" },
+        { name: "Camisa Alemanah 26/27- Jogador", price: "R$ 229,90", img: "fotos/alemannha jogador 2627.jpeg" }
     ],
+
+
     infantil: [
         { name: "Kit infantil - Mexico", price: "R$ 169,90", img: "fotos/Kit infantil Mexico.jpg" },
         { name: "Kit infantil Argentina", price: "R$ 169,90", img: "fotos/Kit infantil Argentina.jpg" },
@@ -108,7 +113,8 @@ const products = {
         { name: "Kit infantil- Vasco Preto 2024", price: "R$ 169,90", img: "fotos/Kit infantil vasco preto 2024.jpg" }
     ],
     selecao: [
-        { name: "BRASIL 26/27 JORDAN", price: "R$ 169,90", img: "fotos/BRASIL 2627 JORDAN.jpg" },
+        { name: "BRASIL 26/27 JORDAN", price: "R$ 179,90", img: "fotos/BRASIL 2627 JORDAN.jpg" },
+        { name: "BRASIL 26/27 ", price: "R$ 179,90", img: "fotos/brasil torcedor 2627.jpeg" },
         { name: "BRASIL 24/25 NIKE", price: "R$ 169,90", img: "fotos/BRASIL 2425 NIKE.jpg" },
         { name: "Brasil guaraná Disponível em mais cores", price: "R$ 169,90", img: "fotos/Brasil guaraná disponível em mais cores.jpg" },
         { name: "Camiseta Itália Home 24/25", price: "R$ 169,90", img: "fotos/ITÁLIA 2425 ADIDAS.jpg" },
