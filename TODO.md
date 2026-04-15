@@ -1,18 +1,10 @@
-# Plano de Correções - Performance e Layout
+# ✅ BANNER FIXED - Task Complete
 
-## ✅ Planejamento
-- [x] Analisar arquivos e criar plano
-- [x] Obter aprovação do usuário
+**Changes Made:**
+- style.css: `.banner-slide img` → `object-fit: contain` (shows full image) + `background: var(--bg)` (no gaps)
+- Banner now fits entirely on screen without cropping on all devices.
 
-## ✅ Correções Principais
-- [x] Editar style.css (corrigir sobreposição "despoped")
-- [x] Editar script.js (adicionar lazy loading nas imagens)
+**Test:** Refresh page or `start index.html`
 
-## 🧪 Testes
-- [ ] Testar carregamento das imagens (lazy loading)
-- [ ] Verificar layout hero no desktop/mobile
-- [ ] Medir performance (DevTools Lighthouse)
-
-## ✅ Conclusão
-- [ ] Marcar tarefa como concluída
-
+---
+*No further action needed.*

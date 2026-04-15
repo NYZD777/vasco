@@ -94,12 +94,13 @@ const products = {
         { name: "SÃO PAULO 25/26 NEW BALANCE - Branca - Jogador", price: "R$ 219,90", img: "fotos/SÃO PAULO 2526 NEW BALANCE - Branca -  Jogador.jpg" },
         { name: "BARCELONA 25/26 KOBE BRYANT - Jogador", price: "R$ 219,90", img: "fotos/BARCELONA 2526 KOBE BRYANT - Jogador.jpg" },
         { name: "Camisa Barcelona x Cactus Jack - Jogador", price: "R$ 219,90", img: "fotos/Camisa Barcelona x Cactus Jack - jogador -.jpg" },
-        { name: "Camisa Ingalterra 26/27- Jogador", price: "R$ 229,90", img: "fotos/INGLATERRA JOGADOR NOVA.jpeg" },
-        { name: "Camisa Alemanah 26/27- Jogador", price: "R$ 229,90", img: "fotos/alemannha jogador 2627.jpeg" }
+        { name: "Camisa Inglaterra 26/27- Jogador", price: "R$ 229,90", img: "fotos/INGLATERRA JOGADOR NOVA.jpeg" },
+        { name: "Camisa Alemanha 26/27- Jogador", price: "R$ 229,90", img: "fotos/alemannha jogador 2627.jpeg" }
     ],
 
 
     infantil: [
+        { name: "Kit infantil - Mexico", price: "R$ 189,90", img: "fotos/conjunto infantil brasil 2627 azul.jpeg" },
         { name: "Kit infantil - Mexico", price: "R$ 169,90", img: "fotos/Kit infantil Mexico.jpg" },
         { name: "Kit infantil Argentina", price: "R$ 169,90", img: "fotos/Kit infantil Argentina.jpg" },
         { name: "Kit infantil Portugal", price: "R$ 169,90", img: "fotos/Kit infantil Portugal.jpg" },
@@ -142,7 +143,7 @@ const categoryLabels = {
 
 // Banner rotativo
 const banners = [
-    { img: "fotos/banner-brasilduascamias.jpeg", link: "#selecao" },
+    { img: "fotos/Lançamento de camisas Copa Brasil .png", link: "#selecao" },
     { img: "fotos/banner-brasilamarela.jpeg", link: "#selecao" },
     { img: "fotos/banner-brasilazul.jpeg", link: "#selecao" }
 ];
