@@ -100,7 +100,8 @@ const products = {
 
 
     infantil: [
-        { name: "Kit infantil - Mexico", price: "R$ 189,90", img: "fotos/conjunto infantil brasil 2627 azul.jpeg" },
+        { name: "Kit infantil - Brasil 26/27 azul", price: "R$ 189,90", img: "fotos/conjunto infantil brasil 2627 azul.jpeg" },
+        { name: "Kit infantil - Brasil 26/27 amarelo", price: "R$ 189,90", img: "fotos/CONJUNTO INFANTIL BRASIL 2627.jpeg" },
         { name: "Kit infantil - Mexico", price: "R$ 169,90", img: "fotos/Kit infantil Mexico.jpg" },
         { name: "Kit infantil Argentina", price: "R$ 169,90", img: "fotos/Kit infantil Argentina.jpg" },
         { name: "Kit infantil Portugal", price: "R$ 169,90", img: "fotos/Kit infantil Portugal.jpg" },
@@ -118,6 +119,7 @@ const products = {
         { name: "BRASIL 26/27 ", price: "R$ 179,90", img: "fotos/brasil torcedor 2627.jpeg" },
         { name: "BRASIL 24/25 NIKE", price: "R$ 169,90", img: "fotos/BRASIL 2425 NIKE.jpg" },
         { name: "Brasil guaraná Disponível em mais cores", price: "R$ 169,90", img: "fotos/Brasil guaraná disponível em mais cores.jpg" },
+        { name: "BRASIL 2022", price: "R$ 169,90", img: "fotos/BRASIL 2022.jpeg" },
         { name: "Camiseta Itália Home 24/25", price: "R$ 169,90", img: "fotos/ITÁLIA 2425 ADIDAS.jpg" },
         { name: "ITÁLIA 26/27 ADIDAS", price: "R$ 169,90", img: "fotos/ITÁLIA 2627 ADIDAS.jpg" },
         { name: "ITÁLIA 26/27 ADIDAS AZUL", price: "R$ 169,90", img: "fotos/ITÁLIA 2627 ADIDAS AZUL.jpg" },
