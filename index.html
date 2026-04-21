@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Despoped | Elite Streetwear & Football</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=Syncopate:wght@700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CATEGORY BAR -->
+    <nav class="cat-bar" id="catBar">
+        <ul class="cat-list">
+            <li><a href="#home" class="cat-link">Home</a></li>
+            <li><a href="#nacional" class="cat-link">Camisa Nacional</a></li>
+            <li><a href="#internacional" class="cat-link">Camisa Internacional</a></li>
+            <li><a href="#retro" class="cat-link">Camisa Retrô</a></li>
+            <li><a href="#jogador" class="cat-link">Camisa jogador</a></li>
+            <li><a href="#infantil" class="cat-link">Conjunto Infantil</a></li>
+            <li><a href="#selecao" class="cat-link">Seleção</a></li>
+            <li><a href="#contato" class="cat-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileMenu()"></div>
+
+    <nav class="mobile-nav" id="mobileNav">
+        <button class="mobile-close" onclick="closeMobileMenu()">
+            <i data-lucide="x" width="20" height="20"></i>
+        </button>
+        <a href="#home" onclick="closeMobileMenu()">Home</a>
+        <a href="#nacional" onclick="closeMobileMenu()">Camisa Nacional</a>
+        <a href="#internacional" onclick="closeMobileMenu()">Camisa Internacional</a>
+        <a href="#retro" onclick="closeMobileMenu()">Camisa Retrô</a>
+        <a href="#jogador" onclick="closeMobileMenu()">Camisa Jogador</a>
+        <a href="#infantil" onclick="closeMobileMenu()">Conjunto Infantil</a>
+        <a href="#selecao" onclick="closeMobileMenu()">Seleção</a>
+        <a href="#contato" onclick="closeMobileMenu()">Contato</a>
+    </nav>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <button class="lb-close" onclick="closeLightbox()">
+            <i data-lucide="x" width="20" height="20"></i>
+        </button>
+        <img id="lb-img" src="" alt="">
+    </div>
+
+<!-- HERO + BANNER ROTATIVO -->
+    <section class="hero" id="home">
+        <div class="hero-inner">
+            <div class="hero-badge"><i data-lucide="zap" width="12" height="12"></i>despoped</div>
+            <h1>DOMINE AS RUAS<br>E O <span>CAMPO.</span></h1>
+            <p>Os mantos mais exclusivos com a qualidade que você exige. Estilo de elite para quem entende de jogo.</p>
+            <div class="hero-btns">
+                <a href="#nacional" class="btn-primary">Ver Coleção</a>
+                <a href="#contato" class="btn-ghost">Fale Conosco</a>
+            </div>
+            <div class="hero-header">
+<a href="#home" class="logo">DESPO<span>PED</span></a>
+                <button class="menu-toggle" onclick="openMobileMenu()" aria-label="Abrir menu">
+                    <i data-lucide="menu" width="24" height="24"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER ROTATIVO -->
+<div id="bannerContainer"></div>
+
+    <!-- GLOBAL SEARCH BAR -->
+    <div class="search-container" id="searchContainer">
+        <div class="search-box">
+            <i data-lucide="search" width="20" height="20"></i>
+            <input type="text" id="searchInput" placeholder="Buscar camisas (ex: Palmeiras, Brasil, Jogador)...">
+            <button id="clearSearch" class="clear-btn" style="display: none;">
+                <i data-lucide="x" width="50" height="50"></i>
+            </button>
+        </div>
+        <div id="searchInfo" class="search-info" style="display: none;"></div>
+    </div>
+
+    <!-- PRODUTOS (gerado dinamicamente) -->
+    <div id="productsContainer"></div>
+
+    <!-- CONTATO -->
+    <section class="contact-section" id="contato">
+        <h2>CONTATO <span>DESPOPED</span></h2>
+        <p>Fale com a gente pelas nossas redes</p>
+        <div class="contact-grid">
+            <a href="https://wa.me/5519982438102" target="_blank" class="contact-card">
+                <i data-lucide="message-circle" width="30" height="30" color="#25D366"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="https://www.instagram.com/despoped?igsh=djZqbWN1bjNhb2lw&utm_source=qr" target="_blank"
+                class="contact-card">
+                <i data-lucide="instagram" width="30" height="30" color="#E1306C"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="https://www.tiktok.com/@despoped?_r=1&_t=ZS-93yYAjzBIlF" target="_blank" class="contact-card">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#ff0050" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+                </svg>
+                <span>TikTok</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <span class="footer-logo">DESPO<span>PED</span></span>
+        <span>&copy; 2026 Despoped Store — Todos os direitos reservados</span>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="products.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
+
