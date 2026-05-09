@@ -297,6 +297,18 @@
             transition: background 0.25s;
         }
         .buy-btn:hover { background: var(--primary); }
+        .btn-primary:focus-visible,
+        .btn-ghost:focus-visible,
+        .cat-link:focus-visible,
+        .menu-toggle:focus-visible,
+        .clear-btn:focus-visible,
+        .banner-nav:focus-visible,
+        .lb-close:focus-visible,
+        .buy-btn:focus-visible {
+            outline: 2px solid rgba(0,255,136,0.9);
+            outline-offset: 3px;
+        }
+
 
         /* ===== CONTACT ===== */
         .contact-section {
@@ -527,3 +539,14 @@
             .banner-prev { left: 8px; }
             .banner-next { right: 8px; }
         }
+
+        /* Reduced motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important;
+                transition: none !important;
+                animation: none !important;
+            }
+            .banner-slide { transition: none !important; }
+        }
+

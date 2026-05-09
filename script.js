@@ -49,8 +49,10 @@ function renderBanner() {
     const bannerContainer = document.getElementById('bannerContainer');
     if (!bannerContainer || banners.length === 0) return;
 
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+
     let html = `
-        <div class="banner-carousel">
+        <div class="banner-carousel" aria-label="Destaques">
             <div class="banner-slides">
                 ${banners.map((b, i) => `
                     <a href="${b.link}" class="banner-slide ${i === 0 ? 'active' : ''}">
@@ -58,24 +60,51 @@ function renderBanner() {
                     </a>
                 `).join('')}
             </div>
-            <button class="banner-nav banner-prev" onclick="changeBanner(-1)">
+            <button class="banner-nav banner-prev" type="button" onclick="changeBanner(-1)" aria-label="Banner anterior">
                 <i data-lucide="chevron-left" width="24" height="24"></i>
             </button>
-            <button class="banner-nav banner-next" onclick="changeBanner(1)">
+            <button class="banner-nav banner-next" type="button" onclick="changeBanner(1)" aria-label="Próximo banner">
                 <i data-lucide="chevron-right" width="24" height="24"></i>
             </button>
-            <div class="banner-dots">
+            <div class="banner-dots" role="tablist" aria-label="Navegação de banners">
                 ${banners.map((_, i) => `
-                    <span class="banner-dot ${i === 0 ? 'active' : ''}" onclick="goToBanner(${i})"></span>
+                    <span class="banner-dot ${i === 0 ? 'active' : ''}" role="tab" aria-selected="${i === 0}" tabindex="0" onclick="goToBanner(${i})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goToBanner(${i});}"></span>
                 `).join('')}
             </div>
         </div>
     `;
+
     bannerContainer.innerHTML = html;
     lucide.createIcons();
-    
-    // Auto-play
-    setInterval(() => changeBanner(1), 5000);
+
+    if (prefersReducedMotion) return;
+
+    // Auto-play (pausa quando o usuário interage)
+    startBannerAutoplay();
+}
+
+let bannerInterval = null;
+let bannerPausedByUser = false;
+
+function startBannerAutoplay() {
+    stopBannerAutoplay();
+    bannerPausedByUser = false;
+    bannerInterval = setInterval(() => {
+        if (bannerPausedByUser) return;
+        changeBanner(1);
+    }, 5000);
+
+    const container = document.getElementById('bannerContainer');
+    if (!container) return;
+
+    container.addEventListener('pointerdown', () => {
+        bannerPausedByUser = true;
+    }, { passive: true, once: true });
+}
+
+function stopBannerAutoplay() {
+    if (bannerInterval) clearInterval(bannerInterval);
+    bannerInterval = null;
 }
 
 let currentBanner = 0;
@@ -84,28 +113,43 @@ function changeBanner(direction) {
     const slides = document.querySelectorAll('.banner-slide');
     const dots = document.querySelectorAll('.banner-dot');
     if (slides.length === 0) return;
-    
+
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    if (!prefersReducedMotion) {
+        bannerPausedByUser = true;
+    }
+
     slides[currentBanner].classList.remove('active');
-    dots[currentBanner].classList.remove('active');
-    
+    dots[currentBanner]?.classList.remove('active');
+
     currentBanner = (currentBanner + direction + slides.length) % slides.length;
-    
+
     slides[currentBanner].classList.add('active');
-    dots[currentBanner].classList.add('active');
+    dots[currentBanner]?.classList.add('active');
+
+    // Atualiza aria-selected nos dots
+    dots.forEach((d, i) => d.setAttribute('aria-selected', i === currentBanner ? 'true' : 'false'));
 }
 
 function goToBanner(index) {
     const slides = document.querySelectorAll('.banner-slide');
     const dots = document.querySelectorAll('.banner-dot');
     if (slides.length === 0) return;
-    
+
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
+    if (!prefersReducedMotion) {
+        bannerPausedByUser = true;
+    }
+
     slides[currentBanner].classList.remove('active');
-    dots[currentBanner].classList.remove('active');
-    
+    dots[currentBanner]?.classList.remove('active');
+
     currentBanner = index;
-    
+
     slides[currentBanner].classList.add('active');
-    dots[currentBanner].classList.add('active');
+    dots[currentBanner]?.classList.add('active');
+
+    dots.forEach((d, i) => d.setAttribute('aria-selected', i === currentBanner ? 'true' : 'false'));
 }
 
 // Filter products by query
@@ -174,23 +218,40 @@ function initWhatsApp() {
 }
 
 // Inicializa Lightbox
+let lastFocusedEl = null;
 function initLightbox() {
     const lb = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
-    
+    if (!lb || !lbImg) return;
+
+    // Fechar ao clicar no overlay
+    lb.addEventListener('click', (e) => {
+        if (e.target === lb) closeLightbox();
+    });
+
     document.querySelectorAll('.zoom-img').forEach(img => {
-        img.addEventListener('click', () => {
+        img.addEventListener('click', (e) => {
+            lastFocusedEl = e.currentTarget;
             lbImg.src = img.src;
             lb.classList.add('open');
             document.body.classList.add('no-scroll');
+
+            // foco no botão fechar
+            const closeBtn = lb.querySelector('.lb-close');
+            closeBtn?.focus?.();
         });
     });
 }
 
 function closeLightbox() {
     const lb = document.getElementById('lightbox');
+    if (!lb) return;
+
     lb.classList.remove('open');
     document.body.classList.remove('no-scroll');
+
+    // devolve foco
+    lastFocusedEl?.focus?.();
 }
 
 // Mobile Menu
